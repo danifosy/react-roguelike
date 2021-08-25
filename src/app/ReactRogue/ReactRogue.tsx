@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import styles from './ReactRogue.module.css';
 import InputManager from './InputManager.jsx';
+import Player from '../Player';
 
 type CanvasProps = {
   width: number;
@@ -14,7 +15,7 @@ export default function ReactRogue({
   tilesize,
 }: CanvasProps): JSX.Element {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [player, setPlayer] = useState({ x: 64, y: 128 });
+  const [player, setPlayer] = useState(new Player(1, 2, tilesize));
 
   let inputManager = new InputManager();
 
