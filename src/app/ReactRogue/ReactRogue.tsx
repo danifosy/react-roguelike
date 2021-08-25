@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import styles from './ReactRogue.module.css';
-import InputManager from './InputManager';
+import { InputManager, InputHandlerFunction } from './InputManager';
 import Player from '../Player';
 
 type CanvasProps = {
@@ -19,9 +19,9 @@ export default function ReactRogue({
 
   const inputManager = new InputManager();
 
-  const handleInput = (action, data) => {
+  const handleInput: InputHandlerFunction = (action, data) => {
     console.log(`handle input: ${action}:${JSON.stringify(data)}`);
-    const newPlayer = new Player();
+    const newPlayer = new Player(1, 2, tilesize);
     Object.assign(newPlayer, player);
     newPlayer.move(data.x, data.y);
     setPlayer(newPlayer);
