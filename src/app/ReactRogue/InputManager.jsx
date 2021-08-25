@@ -5,11 +5,11 @@ class InputManager {
     this.observer.push(fn);
   }
   unsubscribe(fn) {
-    this.observers = this.observers.filter((subscriber) => subscriber !== fn);
+    this.observer = this.observer.filter((subscriber) => subscriber !== fn);
   }
 
   broadcast(action, data) {
-    this.observers.forEach((subscriber) => subscriber(action, data));
+    this.observer.forEach((subscriber) => subscriber(action, data));
   }
   handleKeys = (e) => {
     e.preventDefault();
