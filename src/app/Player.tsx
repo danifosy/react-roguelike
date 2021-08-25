@@ -1,11 +1,11 @@
 class Player {
-  constructor(x, y, size) {
+  constructor(x: number, y: number, size: number) {
     this.x = x;
     this.y = y;
     this.size = size;
   }
 
-  move(dx, dy) {
+  move(dx: number, dy: number) {
     this.x += dx;
     this.y += dy;
   }
@@ -14,7 +14,7 @@ class Player {
     context.fillStyle = '#f00';
     context.textBaseline = 'hanging';
     context.font = '16px Helvetica';
-    context.fillText('@', this.x * this.size, this.y * this.size);
+    context.fillText('🦊', this.x * this.size, this.y * this.size);
   }
 }
 
