@@ -5,7 +5,7 @@ export default function App(): JSX.Element {
   return (
     <>
       <h1>Hello Game</h1>
-      <ReactRogue />
+      <ReactRogue width={40} height={40} tilesize={16} />
     </>
   );
 }
