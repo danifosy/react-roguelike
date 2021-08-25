@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styles from './ReactRogue.module.css';
 
 type Canvas = {
@@ -12,10 +12,10 @@ export default function ReactRogue({
   height,
   tilesize,
 }: Canvas): JSX.Element {
-  //const canvasRef = useRef();
+  const canvasRef = useRef(null);
   return (
     <canvas
-      //ref={canvasRef}
+      ref={canvasRef}
       width={width * tilesize}
       height={height * tilesize}
       className={styles.canvas}
